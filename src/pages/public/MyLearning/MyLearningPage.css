@@ -1,0 +1,230 @@
+:root {
+  --ml-primary: #027173;
+  --ml-primary-dark: #015a5a;
+  --ml-primary-light: #039e9e;
+  --ml-secondary: #d4af37;
+  --ml-dark: #1e2a1f;
+  --ml-gray: #6c757d;
+  --ml-light-gray: #e9ecef;
+  --ml-border-radius: 8px;
+}
+
+.my-learning-page {
+  font-family: 'Poppins', sans-serif;
+  color: var(--ml-dark);
+}
+
+.my-learning-hero {
+  background: linear-gradient(135deg, var(--ml-primary) 0%, var(--ml-primary-dark) 100%);
+  color: white;
+  text-align: center;
+  padding: 60px 20px 50px;
+}
+
+.my-learning-hero h1 {
+  font-size: 2.3rem;
+  margin: 0 0 10px;
+}
+
+.my-learning-hero p {
+  opacity: 0.9;
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.my-learning-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+.my-learning-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--ml-gray);
+}
+
+.my-learning-state i {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.my-learning-state-error {
+  color: #c0392b;
+}
+
+.my-learning-empty {
+  text-align: center;
+  padding: 80px 20px;
+  background: white;
+  border-radius: var(--ml-border-radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.my-learning-empty i {
+  font-size: 2.5rem;
+  color: var(--ml-primary-light);
+  margin-bottom: 16px;
+}
+
+.my-learning-empty h2 {
+  color: var(--ml-primary);
+  margin: 0 0 8px;
+}
+
+.my-learning-empty p {
+  color: var(--ml-gray);
+  margin: 0 0 24px;
+}
+
+.my-learning-browse-btn {
+  display: inline-block;
+  background: var(--ml-primary);
+  color: white;
+  padding: 12px 28px;
+  border-radius: var(--ml-border-radius);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.my-learning-browse-btn:hover {
+  background: var(--ml-primary-dark);
+}
+
+.learning-section {
+  margin-bottom: 48px;
+}
+
+.learning-section h2 {
+  color: var(--ml-primary);
+  font-size: 1.4rem;
+  margin: 0 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--ml-light-gray);
+}
+
+.learning-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.learning-card {
+  background: white;
+  border-radius: var(--ml-border-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.learning-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.learning-card-cover {
+  position: relative;
+  height: 150px;
+  background: linear-gradient(135deg, var(--ml-primary) 0%, var(--ml-primary-dark) 100%);
+}
+
+.learning-card-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.learning-card-cover-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.85);
+  font-size: 2.4rem;
+}
+
+.learning-badge-complete {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--ml-secondary);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.learning-card-body {
+  padding: 18px 20px 20px;
+}
+
+.learning-card-body h3 {
+  margin: 0 0 4px;
+  font-size: 1.1rem;
+  color: var(--ml-dark);
+}
+
+.learning-instructor {
+  color: var(--ml-gray);
+  font-size: 0.85rem;
+  margin: 0 0 14px;
+}
+
+.learning-progress-track {
+  height: 7px;
+  background: var(--ml-light-gray);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.learning-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--ml-primary-light), var(--ml-secondary));
+  border-radius: 10px;
+  transition: width 0.4s ease;
+}
+
+.learning-progress-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--ml-gray);
+  margin-bottom: 14px;
+}
+
+.learning-continue {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ml-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.learning-card:hover .learning-continue i {
+  transform: translateX(3px);
+}
+
+.learning-continue i {
+  transition: transform 0.2s ease;
+}
+
+@media (max-width: 560px) {
+  .my-learning-hero h1 {
+    font-size: 1.8rem;
+  }
+  .learning-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,101 @@
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--a-text-light);
+  text-decoration: none;
+  font-size: 0.88rem;
+  margin-bottom: 16px;
+}
+
+.backLink:hover {
+  color: var(--a-primary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.mainCard {
+  padding: 28px;
+}
+
+.sideCard {
+  padding: 24px;
+}
+
+.sideCard h3 {
+  margin: 0 0 16px;
+  font-size: 1.05rem;
+  color: var(--a-text);
+}
+
+.section {
+  margin-bottom: 28px;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.section h3 {
+  margin: 0 0 14px;
+  font-size: 1rem;
+  color: var(--a-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.infoList {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  row-gap: 12px;
+  column-gap: 16px;
+  margin: 0;
+}
+
+.infoList dt {
+  color: var(--a-text-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.infoList dd {
+  margin: 0;
+  color: var(--a-text);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.infoList a {
+  color: var(--a-primary);
+}
+
+.actionStack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.actionStack .btn {
+  justify-content: center;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .infoList {
+    grid-template-columns: 1fr;
+    row-gap: 4px;
+  }
+  .infoList dd {
+    margin-bottom: 10px;
+  }
+}

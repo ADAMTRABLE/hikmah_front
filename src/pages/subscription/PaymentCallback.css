@@ -1,0 +1,93 @@
+.callback-page {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  background: var(--light-bg);
+}
+
+.callback-card {
+  width: 100%;
+  max-width: 440px;
+  background: var(--light);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 20px 50px rgba(1, 90, 90, 0.12);
+  text-align: center;
+}
+
+.callback-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2rem;
+}
+
+.callback-icon.checking {
+  background: rgba(2, 113, 115, 0.1);
+  color: var(--primary);
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+.callback-icon.success {
+  background: #f0fdf4;
+  color: #16a34a;
+}
+
+.callback-icon.pending {
+  background: #fffbeb;
+  color: #d97706;
+}
+
+.callback-icon.failed {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.08); opacity: 0.8; }
+}
+
+.callback-card h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+
+.callback-card p {
+  color: var(--text-light);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin-bottom: 1.75rem;
+}
+
+.callback-btn {
+  padding: 0.85rem 1.8rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: var(--light);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(2, 113, 115, 0.25);
+  transition: transform 0.15s ease;
+}
+
+.callback-btn:hover {
+  transform: translateY(-1px);
+}
+
+.callback-btn.secondary {
+  background: var(--light-bg);
+  color: var(--primary-dark);
+  box-shadow: none;
+  border: 1.5px solid rgba(2, 113, 115, 0.25);
+}

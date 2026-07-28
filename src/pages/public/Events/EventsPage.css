@@ -1,0 +1,493 @@
+/* src/pages/public/events/EventsPage.css */
+:root {
+  --primary: #027173;
+  --primary-dark: #015a5a;
+  --primary-light: #039e9e;
+  --secondary: #d4af37;
+  --accent: #ff7b54;
+  --text: #333;
+  --text-light: #777;
+  --light: #fff;
+  --light-bg: #f8f5f0;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.events-page {
+  font-family: 'Poppins', 'Noto Naskh Arabic', sans-serif;
+  background-color: var(--light-bg);
+  color: var(--text);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23027173" opacity="0.03"/><path d="M20,20 Q50,5 80,20 T100,50 Q85,80 50,100 T0,50 Q15,20 50,0 T100,20" fill="none" stroke="%23027173" stroke-width="0.5" opacity="0.1"/></svg>');
+}
+
+/* Hero Section */
+.events-hero {
+  background: linear-gradient(rgba(2, 113, 115, 0.9), rgba(1, 90, 90, 0.9)), 
+              url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23d4af37" opacity="0.1"/><path d="M20,20 Q50,5 80,20 T100,50 Q85,80 50,100 T0,50 Q15,20 50,0 T100,20" fill="none" stroke="%23d4af37" stroke-width="0.5" opacity="0.2"/></svg>');
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  margin-bottom: 50px;
+}
+
+.events-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.events-hero p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.arabic-hero {
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 2.5rem;
+  margin: 30px 0;
+  color: var(--secondary);
+  line-height: 1.8;
+  min-height: 4rem;
+  transition: opacity 0.5s ease;
+}
+
+/* Events Container */
+.events-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 50px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 2.2rem;
+  color: var(--primary-dark);
+  display: inline-block;
+  padding-bottom: 15px;
+}
+
+.section-title h2:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--secondary);
+  border-radius: 2px;
+}
+
+.events-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 12px 30px;
+  background: white;
+  border: 2px solid var(--primary);
+  border-radius: 30px;
+  font-weight: 600;
+  color: var(--primary);
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1.05rem;
+}
+
+.tab-btn:hover, .tab-btn.active {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(2, 113, 115, 0.3);
+}
+
+.events-section {
+  display: none;
+}
+
+.events-section.active {
+  display: block;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+/* Event Cards */
+.event-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all 0.3s;
+}
+
+.event-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.event-type {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: var(--secondary);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  z-index: 1;
+}
+
+.event-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  padding: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+}
+
+.event-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
+.event-header-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.event-header-text p {
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+.event-body {
+  padding: 25px;
+}
+
+.event-details {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.event-date {
+  min-width: 70px;
+  text-align: center;
+  background: var(--light-bg);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.event-date .day {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.event-date .month {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+.event-info {
+  flex: 1;
+}
+
+.event-info p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.event-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.event-meta i {
+  margin-right: 5px;
+  color: var(--primary);
+}
+
+.event-status {
+  display: inline-block;
+  padding: 5px 10px;
+  background: rgba(2, 113, 115, 0.1);
+  color: var(--primary);
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 25px;
+  background: var(--secondary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+
+/* Booking Section */
+.booking-section {
+  background: white;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  padding: 40px;
+  margin: 50px 0;
+}
+
+.booking-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.booking-header h2 {
+  font-size: 2rem;
+  color: var(--primary-dark);
+  margin-bottom: 15px;
+}
+
+.booking-header p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.booking-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-section-title {
+  color: var(--primary-dark);
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--secondary);
+  padding-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+label span {
+  color: #e74c3c;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(2, 113, 115, 0.1);
+  outline: none;
+}
+
+textarea.form-control {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.submit-btn {
+  grid-column: 1 / -1;
+  padding: 15px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(2, 113, 115, 0.3);
+}
+
+/* Sheikhs Section */
+.sheikhs-section {
+  margin-top: 50px;
+}
+
+.sheikhs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.sheikh-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: var(--shadow);
+  display: flex;
+  gap: 20px;
+  transition: all 0.3s;
+}
+
+.sheikh-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.sheikh-avatar {
+  width: 80px;
+  height: 80px;
+  background: rgba(2, 113, 115, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.sheikh-details {
+  flex: 1;
+}
+
+.sheikh-details h3 {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+  color: var(--primary-dark);
+}
+
+.sheikh-title {
+  font-weight: 600;
+  color: var(--secondary);
+  margin-bottom: 10px;
+}
+
+.sheikh-bio {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .events-grid, .sheikhs-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .events-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .arabic-hero {
+    font-size: 2rem;
+  }
+  
+  .booking-form {
+    grid-template-columns: 1fr;
+  }
+  
+  .tab-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .events-hero {
+    padding: 60px 15px;
+  }
+  
+  .events-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .arabic-hero {
+    font-size: 1.5rem;
+  }
+  
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .event-details {
+    flex-direction: column;
+  }
+  
+  .booking-section {
+    padding: 20px;
+  }
+}

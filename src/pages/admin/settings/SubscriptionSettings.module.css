@@ -1,0 +1,108 @@
+.toggleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 24px;
+}
+
+.toggleLabel h3 {
+  font-size: 1.05rem;
+  margin: 0 0 4px;
+  color: var(--a-text);
+}
+
+.toggleLabel p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--a-text-light);
+  max-width: 480px;
+  line-height: 1.5;
+}
+
+.switch {
+  position: relative;
+  width: 52px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: #cfd8d8;
+  border-radius: 999px;
+  transition: background 0.2s ease;
+}
+
+.slider::before {
+  content: '';
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+}
+
+.switch input:checked + .slider {
+  background: var(--a-primary);
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(22px);
+}
+
+.switch input:disabled + .slider {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.statusOn {
+  background: #e6f4ea;
+  color: var(--a-success);
+}
+
+.statusOff {
+  background: #fdf3e0;
+  color: #a06c0a;
+}
+
+.hintCard {
+  padding: 20px 24px;
+  color: var(--a-text-light);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.hintCard code {
+  background: var(--a-bg);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+.hintCard a {
+  color: var(--a-primary);
+  font-weight: 600;
+}

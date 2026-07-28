@@ -1,0 +1,38 @@
+import { NavLink } from 'react-router-dom';
+import styles from './AdminSidebar.module.css';
+
+const navItems = [
+  { to: '/admin', label: 'Control Center', icon: 'fa-gauge-high', end: true },
+  { to: '/admin/users', label: 'Users', icon: 'fa-users' },
+  { to: '/admin/courses', label: 'Courses', icon: 'fa-book-quran' },
+  { to: '/admin/library', label: 'Library', icon: 'fa-book' },
+  { to: '/admin/events', label: 'Events', icon: 'fa-calendar-days' },
+  { to: '/admin/settings', label: 'Subscription', icon: 'fa-crown' },
+];
+
+const AdminSidebar = () => {
+  return (
+    <aside className={styles.sidebar}>
+      <nav className={styles.nav}>
+        {navItems.map((item) => (
+          <NavLink
+            key={item.to}
+            to={item.to}
+            end={item.end}
+            className={({ isActive }) => `${styles.navLink} ${isActive ? styles.navLinkActive : ''}`}
+          >
+            <i className={`fas ${item.icon}`}></i>
+            <span>{item.label}</span>
+          </NavLink>
+        ))}
+      </nav>
+
+      <NavLink to="/" className={styles.backToSite}>
+        <i className="fas fa-arrow-left"></i>
+        <span>Back to Site</span>
+      </NavLink>
+    </aside>
+  );
+};
+
+export default AdminSidebar;

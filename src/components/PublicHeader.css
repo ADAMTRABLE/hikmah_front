@@ -1,0 +1,236 @@
+
+.public-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.logo-text h2 {
+  font-size: 1.3rem;
+  margin: 0;
+  line-height: 1.2;
+  color: #1a2a3a;
+}
+
+.logo-text span {
+  font-size: 0.85rem;
+  color: #6b7a8a;
+}
+
+/* Navigation links - desktop */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.nav-item:hover {
+  background: #f0f4f8;
+}
+
+.nav-item.active {
+  background: #e8edf3;
+  font-weight: 600;
+}
+
+.nav-link .link {
+  text-decoration: none;
+  color: #1a2a3a;
+  font-size: 1rem;
+}
+
+.nav-icon .link-icon {
+  font-size: 1.1rem;
+  color: #4a5a6a;
+}
+
+/* User account */
+.user-account {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-account .link {
+  text-decoration: none;
+  color: #1a2a3a;
+  font-size: 0.95rem;
+}
+
+.user-icon {
+  font-size: 1.6rem;
+  color: #4a5a6a;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  padding: 0.2rem;
+  transition: color 0.2s;
+}
+
+.logout-btn:hover {
+  color: #d32f2f;
+}
+
+/* Hamburger – hidden on desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem;
+}
+
+.hamburger-line {
+  width: 26px;
+  height: 3px;
+  background: #1a2a3a;
+  border-radius: 3px;
+  transition: all 0.25s ease-in-out;
+}
+
+/* ----------------------------------------------
+   Responsive Breakpoints
+   ---------------------------------------------- */
+
+/* Tablet and smaller (≤ 768px) */
+@media (max-width: 768px) {
+  .public-header {
+    padding: 0.5rem 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* Show hamburger */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Navigation wrapper – hidden by default, shown when open */
+  .nav-wrapper {
+    display: none;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e6ed;
+    margin-top: 0.5rem;
+  }
+
+  .nav-wrapper.open {
+    display: flex;
+  }
+
+  /* Stack nav links vertically */
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
+
+  .nav-item {
+    justify-content: center;
+    padding: 0.6rem 0;
+    width: 100%;
+  }
+
+  /* User account also stacked */
+  .user-account {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #e0e6ed;
+    margin-top: 0.5rem;
+    align-items: center;
+  }
+
+  /* Adjust logo size */
+  .logo-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logo-text h2 {
+    font-size: 1.1rem;
+  }
+
+  .logo-text span {
+    font-size: 0.75rem;
+  }
+
+  /* Make admin and my‑learning links full‑width for easier tapping */
+  .user-account .link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Small phones (≤ 480px) */
+@media (max-width: 480px) {
+  .public-header {
+    padding: 0.4rem 0.75rem;
+  }
+
+  .logo-text h2 {
+    font-size: 0.95rem;
+  }
+
+  .logo-text span {
+    font-size: 0.65rem;
+  }
+
+  .logo-img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .hamburger-line {
+    width: 22px;
+    height: 2.5px;
+  }
+
+  .nav-item {
+    padding: 0.5rem 0;
+  }
+
+  .user-account {
+    gap: 0.5rem;
+  }
+}

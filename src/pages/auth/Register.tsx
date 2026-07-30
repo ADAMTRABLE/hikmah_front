@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import authService from '../../services/authService'
-import logo from '../../assets/images/hikimalogo2.png'
+import logo from '../../assets/images/hikilogo1.png'
 import styles from './Auth.module.css'
 
 const Register = () => {

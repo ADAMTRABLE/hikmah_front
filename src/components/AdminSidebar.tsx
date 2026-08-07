@@ -10,28 +10,37 @@ const navItems = [
   { to: '/admin/settings', label: 'Subscription', icon: 'fa-crown' },
 ];
 
-const AdminSidebar = () => {
-  return (
-    <aside className={styles.sidebar}>
-      <nav className={styles.nav}>
-        {navItems.map((item) => (
-          <NavLink
-            key={item.to}
-            to={item.to}
-            end={item.end}
-            className={({ isActive }) => `${styles.navLink} ${isActive ? styles.navLinkActive : ''}`}
-          >
-            <i className={`fas ${item.icon}`}></i>
-            <span>{item.label}</span>
-          </NavLink>
-        ))}
-      </nav>
+type AdminSidebarProps = {
+  isOpen?: boolean;
+  onClose?: () => void;
+}
 
-      <NavLink to="/" className={styles.backToSite}>
-        <i className="fas fa-arrow-left"></i>
-        <span>Back to Site</span>
-      </NavLink>
-    </aside>
+const AdminSidebar = ({ isOpen = false, onClose }: AdminSidebarProps) => {
+  return (
+    <>
+      {isOpen && <div className={styles.backdrop} onClick={onClose} aria-hidden="true" />}
+      <aside className={`${styles.sidebar} ${isOpen ? styles.sidebarOpen : ''}`}>
+        <nav className={styles.nav}>
+          {navItems.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              end={item.end}
+              onClick={onClose}
+              className={({ isActive }) => `${styles.navLink} ${isActive ? styles.navLinkActive : ''}`}
+            >
+              <i className={`fas ${item.icon}`}></i>
+              <span>{item.label}</span>
+            </NavLink>
+          ))}
+        </nav>
+
+        <NavLink to="/" className={styles.backToSite} onClick={onClose}>
+          <i className="fas fa-arrow-left"></i>
+          <span>Back to Site</span>
+        </NavLink>
+      </aside>
+    </>
   );
 };
 

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import type { ReactNode, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../../../services/api';
+import { getMediaUrl } from '../../../utils/media';
 import styles from './admin.module.css';
 import type { FieldConfig, ColumnConfig } from './types';
 
@@ -367,7 +368,7 @@ function ResourceManager<T extends { id: number | string }>({
                             <>
                               {editingItem && typeof formValues[field.name] === 'string' && formValues[field.name] && (
                                 <div style={{ marginBottom: 6 }}>
-                                  <a href={String(formValues[field.name])} target="_blank" rel="noreferrer" style={{ fontSize: '0.82rem' }}>
+                                  <a href={getMediaUrl(String(formValues[field.name]))} target="_blank" rel="noreferrer" style={{ fontSize: '0.82rem' }}>
                                     <i className="fas fa-paperclip"></i> Current file — click to view
                                   </a>
                                 </div>

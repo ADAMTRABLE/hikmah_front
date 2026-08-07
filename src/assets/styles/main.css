@@ -11,6 +11,7 @@
     --light: #fff;
     --light-bg: #f8f5f0;
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --header-h: 76px;
 }
 
 
@@ -49,6 +50,24 @@ a {
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
 }
 
+/* ============ Admin header left group ============ */
+.admin-header-left {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    min-width: 0;
+}
+
+.sidebar-toggle {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .sidebar-toggle {
+        display: flex;
+    }
+}
+
 /* ============ Logo ============ */
 .admin-header .logo,
 .public-header .logo {
@@ -66,8 +85,8 @@ a {
     display: block;
     object-fit: contain;
     border-radius: 50%;
-    background: var(--light);
-    padding: 3px;
+    background: rgba(1, 42, 43, 0.35);
+    padding: 6px;
     box-shadow: var(--shadow);
 }
 
@@ -212,7 +231,7 @@ a {
         display: none;
     }
 
-    .menu-toggle {
+    .public-header .menu-toggle {
         display: flex;
         order: 2;
     }
@@ -260,6 +279,10 @@ a {
 }
 
 @media (max-width: 480px) {
+    :root {
+        --header-h: 66px;
+    }
+
     .public-header, .admin-header {
         padding: 0.5em 0.9em;
         min-height: 66px;

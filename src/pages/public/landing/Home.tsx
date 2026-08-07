@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import api from '../../../services/api';
+import { getMediaUrl } from '../../../utils/media';
 import styles from './Home.module.css';
 
 // ─── API shapes ───
@@ -295,7 +296,7 @@ const Home = () => {
                   <div key={course.id} className={styles.courseCard}>
                     <div className={styles.courseImage}>
                       {course.cover_image ? (
-                        <img src={course.cover_image} alt={course.title} loading="lazy" />
+                        <img src={getMediaUrl(course.cover_image)} alt={course.title} loading="lazy" />
                       ) : (
                         <div className={styles.articleImage}>
                           <i className={`fas fa-${course.icon || 'book-quran'}`}></i>

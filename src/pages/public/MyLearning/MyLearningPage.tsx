@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import api from '../../../services/api';
 import { useAuth } from '../../../context/AuthContext';
+import { getMediaUrl } from '../../../utils/media';
 import './MyLearningPage.css';
 
 interface EnrollmentRow {
@@ -64,7 +65,7 @@ const MyLearningPage = () => {
       <Link to={`/courses/${enrollment.course}`} className="learning-card" key={enrollment.id}>
         <div className="learning-card-cover">
           {enrollment.course_cover_image ? (
-            <img src={enrollment.course_cover_image} alt={enrollment.course_title} />
+            <img src={getMediaUrl(enrollment.course_cover_image)} alt={enrollment.course_title} />
           ) : (
             <div className="learning-card-cover-fallback">
               <i className={`fas fa-${enrollment.course_icon || 'book-quran'}`}></i>

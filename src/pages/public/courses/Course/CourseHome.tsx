@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './CourseHome.css';
 import { Link } from 'react-router-dom';
 import api from '../../../../services/api';
+import { getMediaUrl } from '../../../../utils/media';
 
 type Course = {
   id: number;
@@ -155,7 +156,7 @@ const CourseHome = () => {
               >
                 <div className="course-cover">
                   {course.cover_image ? (
-                    <img src={course.cover_image} alt={course.title} loading="lazy" />
+                    <img src={getMediaUrl(course.cover_image)} alt={course.title} loading="lazy" />
                   ) : (
                     <div className="course-cover-fallback">
                       <i className={`fas fa-${course.icon || 'book-quran'}`}></i>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import api from '../../../services/api';
+import { getMediaUrl } from '../../../utils/media';
 import ResourceManager from '../shared/ResourceManager';
 import AdminTabs from '../shared/AdminTabs';
 import styles from '../shared/admin.module.css';
@@ -79,7 +80,7 @@ const CoursesAdmin = () => {
     {
       key: 'cover_image', label: '', render: (row) => (
         row.cover_image
-          ? <img src={row.cover_image} alt="" style={{ width: 48, height: 32, objectFit: 'cover', borderRadius: 4 }} />
+          ? <img src={getMediaUrl(row.cover_image)} alt="" style={{ width: 48, height: 32, objectFit: 'cover', borderRadius: 4 }} />
           : <div style={{ width: 48, height: 32, borderRadius: 4, background: 'var(--a-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--a-text-light)' }}><i className="fas fa-image" style={{ fontSize: '0.75rem' }}></i></div>
       ),
     },

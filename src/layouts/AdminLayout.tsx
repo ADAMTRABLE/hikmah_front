@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Outlet, Navigate, useLocation } from 'react-router-dom'
 import Header from '../components/AdminHeader'
 import AdminSidebar from '../components/AdminSidebar'
@@ -6,6 +7,7 @@ import { useAuth } from '../context/AuthContext'
 const AdminLayout = () => {
     const { user, isAuthenticated, isLoading } = useAuth();
     const location = useLocation();
+    const [sidebarOpen, setSidebarOpen] = useState(false);
 
     if (isLoading) {
         return (
@@ -32,10 +34,10 @@ const AdminLayout = () => {
 
     return (
         <>
-            <Header />
+            <Header onMenuClick={() => setSidebarOpen((open) => !open)} />
             <div style={{ display: 'flex' }}>
-                <AdminSidebar />
-                <main style={{ flex: 1, minWidth: 0, background: '#f5f7f7', minHeight: 'calc(100vh - 76px)' }}>
+                <AdminSidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+                <main style={{ flex: 1, minWidth: 0, background: '#f5f7f7', minHeight: 'calc(100vh - var(--header-h, 76px))' }}>
                     <Outlet />
                 </main>
             </div>

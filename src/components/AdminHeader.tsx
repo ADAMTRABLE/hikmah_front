@@ -3,22 +3,39 @@ import logo from "../assets/images/hikimalogo2.png"
 import {
     FaUserCircle,
     FaSignOutAlt,
+    FaBars,
 } from "react-icons/fa"
 import { useAuth } from '../context/AuthContext'
 
-const AdminHeader = () => {
+type AdminHeaderProps = {
+    onMenuClick?: () => void;
+}
+
+const AdminHeader = ({ onMenuClick }: AdminHeaderProps) => {
     const { user, logout } = useAuth();
 
     return (
         <>
             <header className="admin-header">
-                <div className="logo">
-                    <div className="logo-icon">
-                        <img src={logo} alt="Hikmah Logo" className="logo-img" />
-                    </div>
-                    <div className="logo-text">
-                        <h2>Hikmah Premier Institute</h2>
-                        <span>Admin Control Center</span>
+                <div className="admin-header-left">
+                    {onMenuClick && (
+                        <button
+                            type="button"
+                            className="menu-toggle sidebar-toggle"
+                            onClick={onMenuClick}
+                            aria-label="Toggle sidebar menu"
+                        >
+                            <FaBars />
+                        </button>
+                    )}
+                    <div className="logo">
+                        <div className="logo-icon">
+                            <img src={logo} alt="Hikmah Logo" className="logo-img" />
+                        </div>
+                        <div className="logo-text">
+                            <h2>Hikmah Premier Institute</h2>
+                            <span>Admin Control Center</span>
+                        </div>
                     </div>
                 </div>
                 <div className="user-account">

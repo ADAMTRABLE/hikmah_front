@@ -199,6 +199,30 @@ const QuestionsAdmin = () => {
     load();
   };
 
+  const handleDownloadTemplate = () => {
+    const csvContent = [
+      'question_key,question_text,question_type,grading_mode,points,choice_text,is_correct',
+      'Q1,"Who was the first Caliph of Islam?",single,,1,Umar ibn al-Khattab,FALSE',
+      'Q1,"Who was the first Caliph of Islam?",single,,1,Abu Bakr as-Siddiq,TRUE',
+      'Q1,"Who was the first Caliph of Islam?",single,,1,Uthman ibn Affan,FALSE',
+      'Q2,"Which of these are Pillars of Islam? (select all that apply)",multi,partial_credit,4,Salah (Prayer),TRUE',
+      'Q2,"Which of these are Pillars of Islam? (select all that apply)",multi,partial_credit,4,Zakat (Charity),TRUE',
+      'Q2,"Which of these are Pillars of Islam? (select all that apply)",multi,partial_credit,4,Voting,FALSE',
+      'Q2,"Which of these are Pillars of Islam? (select all that apply)",multi,partial_credit,4,Sawm (Fasting),TRUE',
+      'Q3,"The Quran was revealed over approximately 23 years.",boolean,,1,,',
+    ].join('\n');
+
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'question_import_template.csv';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
   const handleImport = async () => {
     if (!importFile) return;
     setIsImporting(true);
@@ -314,6 +338,9 @@ const QuestionsAdmin = () => {
             One row per choice, grouped by a repeated <code>question_key</code>. Columns: <code>question_key, question_text, question_type, grading_mode, points, choice_text, is_correct</code>.
             Boolean questions don't need choice rows — True/False are added automatically.
           </p>
+          <button type="button" className={`${styles.btn} ${styles.btnSecondary}`} onClick={handleDownloadTemplate} style={{ marginBottom: '20px' }}>
+            <i className="fas fa-download"></i> Download CSV Template
+          </button>
           <div className={styles.field}>
             <input type="file" accept=".csv" onChange={(e) => setImportFile(e.target.files?.[0] || null)} />
           </div>

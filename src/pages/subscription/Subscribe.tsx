@@ -4,7 +4,7 @@ import subscriptionService from '../../services/subscriptionService'
 import './Subscribe.css'
 
 // Keep in sync with SUBSCRIPTION_ANNUAL_FEE / SUBSCRIPTION_CURRENCY in the backend .env
-const ANNUAL_FEE = 1000
+const ANNUAL_FEE = 150000
 const CURRENCY_LABEL = 'UGX'
 
 const formatAmount = (n: number) => `${CURRENCY_LABEL} ${n.toLocaleString()}`

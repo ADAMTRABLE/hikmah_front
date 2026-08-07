@@ -64,9 +64,6 @@ const Home = () => {
     { id: 2, url: '/images/slide2.jpg', alt: 'Islamic learning session' },
     { id: 3, url: '/images/slide3.jpg', alt: 'Community learning together' },
     { id: 4, url: '/images/slide4.jpg', alt: 'Islamic history and heritage' },
-    { id: 5, url: '/images/slide5.png', alt: 'Islamic history and heritage' },
-    { id: 6, url: '/images/slide6.png', alt: 'Islamic history and heritage' },
-    { id: 7, url: '/images/slide7.jpg', alt: 'Islamic history and heritage' },
   ];
 
   useEffect(() => {

@@ -116,6 +116,7 @@ import EventsPage from '../pages/public/Events/EventsPage'
 import LibraryPage from '../pages/public/Library/LibraryPage'
 import MyLearningPage from '../pages/public/MyLearning/MyLearningPage'
 import TakeAssessment from '../pages/public/Assessments/TakeAssessment'
+import AssessmentOverview from '../pages/public/Assessments/AssessmentOverview'
 import AssessmentReview from '../pages/public/Assessments/AssessmentReview'
 import QuranArabicCourse from '../pages/public/courses/Course/QuranArabicCourse'
 import Login from '../pages/auth/Login'
@@ -139,6 +140,7 @@ export const router = createBrowserRouter([
       { path: '/events', element: <EventsPage /> },
       { path: '/library', element: <LibraryPage /> },
       { path: '/my/learning', element: <MyLearningPage /> },
+      { path: '/assessments/:id', element: <AssessmentOverview /> },
       { path: '/assessments/:id/take', element: <TakeAssessment /> },
       { path: '/assessments/attempts/:attemptId/review', element: <AssessmentReview /> },
       { path: '/subscribe', element: <Subscribe /> },

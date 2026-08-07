@@ -58,7 +58,6 @@ const TakeAssessment = () => {
       }
     };
     start();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   const handleSubmit = async () => {

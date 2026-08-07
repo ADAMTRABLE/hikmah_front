@@ -355,7 +355,7 @@ const QuranArabicCourse = () => {
             <div className="syllabus-assessments">
               <h4>Tests &amp; Exam</h4>
               {assessments.map((a) => (
-                <Link key={a.id} to={`/assessments/${a.id}/take`} className="assessment-link">
+                <Link key={a.id} to={`/assessments/${a.id}`} className="assessment-link">
                   <i className={`fas ${a.assessment_type === 'Exam' ? 'fa-award' : 'fa-file-circle-check'}`}></i>
                   <span>{a.name}</span>
                   <span className="assessment-link-count">{a.question_count} Qs</span>

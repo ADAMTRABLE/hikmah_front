@@ -430,3 +430,137 @@
     flex-direction: column;
   }
 }
+
+/* ── Overview page ────────────────────────────────────── */
+.assessment-overview-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.assessment-overview-header h1 {
+  font-size: 1.7rem;
+  margin: 10px 0 16px;
+}
+
+.assessment-overview-meta {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  color: var(--aq-text-light);
+  font-size: 0.9rem;
+}
+
+.assessment-overview-meta i {
+  color: var(--aq-primary);
+  margin-right: 6px;
+}
+
+.assessment-overview-passed-banner {
+  background: rgba(30,142,90,0.1);
+  color: var(--aq-success);
+  padding: 14px 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.assessment-overview-actions {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.assessment-overview-history h2 {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--aq-border);
+}
+
+.assessment-attempt-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.assessment-attempt-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  flex-wrap: wrap;
+}
+
+.assessment-attempt-row-main {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.assessment-attempt-number {
+  font-weight: 700;
+  color: var(--aq-text);
+}
+
+.assessment-attempt-status {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.assessment-attempt-status.passed {
+  background: rgba(30,142,90,0.12);
+  color: var(--aq-success);
+}
+
+.assessment-attempt-status.failed {
+  background: rgba(192,57,43,0.1);
+  color: var(--aq-danger);
+}
+
+.assessment-attempt-status.in-progress {
+  background: rgba(212,175,55,0.15);
+  color: #a06c0a;
+}
+
+.assessment-attempt-date {
+  color: var(--aq-text-light);
+  font-size: 0.85rem;
+}
+
+.assessment-attempt-row-score {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.assessment-attempt-percentage {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--aq-primary);
+}
+
+.assessment-btn-sm {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 560px) {
+  .assessment-attempt-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .assessment-attempt-row-score {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
